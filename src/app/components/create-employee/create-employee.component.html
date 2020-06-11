@@ -1,0 +1,90 @@
+<div style="height: 500px">
+  <mat-card style="width: 50vh;text-align: center; padding: 30px">
+    <form [formGroup]="form" (ngSubmit)="createEmployee()">
+      <mat-form-field>
+        <label for="name">
+          <input matInput type="text" class="form-control" id="name" placeholder="Name" formControlName="name">
+        </label>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <label for="email">
+          <input matInput type="text" class="form-control" id="email" placeholder="Email" formControlName="email">
+        </label>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <label for="mobile_no">
+          <input matInput type="text" class="form-control" id="mobile_no" placeholder="Mobile No"
+                 formControlName="mobile_no">
+        </label>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <label for="password">
+          <input matInput type="text" class="form-control" id="password" placeholder="Password"
+                 formControlName="password">
+        </label>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Category</mat-label>
+        <mat-select formControlName="category_id">
+          <mat-option *ngFor="let category of categories" value="{{category.id}}">{{category.title}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <label for="aadhaar_no">
+          <input matInput type="text" class="form-control" id="aadhaar_no" placeholder="Aadhaar No"
+                 formControlName="aadhaar_no">
+        </label>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <label for="driver_license">
+          <input matInput type="text" class="form-control" id="driver_license" placeholder="Driver License Number"
+                 formControlName="driver_license">
+        </label>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <label for="area">
+          <input matInput type="text" class="form-control" id="area" placeholder="Area"
+                 formControlName="area">
+        </label>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <label for="location">
+          <input matInput type="text" class="form-control" id="location" placeholder="Location"
+                 formControlName="location">
+        </label>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <label for="city">
+          <input matInput type="text" class="form-control" id="city" placeholder="City"
+                 formControlName="city">
+        </label>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <label for="state">
+          <input matInput type="text" class="form-control" id="state" placeholder="State"
+                 formControlName="state">
+        </label>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <label for="pincode">
+          <input matInput type="text" class="form-control" id="pincode" placeholder="Pincode"
+                 formControlName="pincode">
+        </label>
+      </mat-form-field>
+      <br>
+      <button mat-raised-button type="submit" [disabled]="form.invalid || loading" class="btn btn-success">Submit <i
+        class="fa fa-spinner fa-spin fa-fw" *ngIf="loading"></i></button>
+    </form>
+  </mat-card>
+</div>

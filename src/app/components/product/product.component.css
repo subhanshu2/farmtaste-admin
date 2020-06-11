@@ -1,0 +1,105 @@
+#content {
+  /*width: 1250px;*/
+  /*float: right;*/
+  margin-left: 250px;
+  background-size: cover;
+  height: 100%;
+  transition: 0.5s;
+  /*position: relative;*/
+  overflow-y: hidden;
+}
+.categories {
+  display: block;
+}
+
+.card {
+  margin: 10px;
+  padding: 20px;
+  border: 2px solid lightgray;
+  background-color: lightgray;
+  display: inline-block;
+}
+
+.add {
+  box-shadow: 3px 6px #333333;
+}
+
+.add:hover {
+  cursor: pointer;
+
+}
+
+.add-button {
+  display: block;
+}
+
+.card:hover {
+  box-shadow: none;
+}
+
+mat-card-content {
+  text-align: center;
+}
+
+mat-card-actions .mat-button {
+  margin-left: 8px;
+}
+
+.single {
+  text-align: center;
+  /*width: 100%;*/
+  /*justify-content: space-between;*/
+
+}
+
+h2 {
+  padding: 10px;
+  color: #333333;
+}
+button {
+  background-color: white;
+  color: #333333;
+}
+button:hover {
+  background-color: #19B3D3;
+  color: white;
+}
+
+.single {
+  color: white;
+  background: #2f323a;
+  border-radius: 10px;
+}
+
+.subCategories {
+  display: none;
+}
+
+.products {
+  display: none;
+}
+.fixed {
+  /*width: 100%;*/
+  /*background-color: white;*/
+  position: sticky;
+  z-index: 10;
+  height: 250px;
+  top: 0;
+}
+.existing {
+  /*position: absolute;*/
+  height: 400px;
+  /*margin-top: 300px;*/
+  overflow-y: scroll;
+}
+.navigation {
+  padding: 10px;
+  font-weight: lighter;
+}
+.shift:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+.current {
+  font-weight: bold;
+}

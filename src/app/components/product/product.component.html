@@ -1,0 +1,99 @@
+<!--
+Author: Subhanshu Chaddha
+Contact: subhanshu.chaddha2@gmail.com
+College: AKGEC, Ghaziabad
+-->
+<app-dashboard></app-dashboard>
+<div id="content">
+  <div class="categories">
+    <div class="fixed">
+
+      <p class="navigation current">Categories</p>
+      <div class="add-button">
+        <mat-card class="card add" (click)="createCategory()">
+          <mat-card-title>Add Category</mat-card-title>
+          <mat-card-content>+</mat-card-content>
+        </mat-card>
+      </div>
+
+      <h2>List Of Categories</h2>
+    </div>
+    <div class="existing">
+      <mat-card class="card single" *ngFor="let category of categories">
+        <mat-card-content>{{category.title}}</mat-card-content>
+        <mat-card-actions style="text-align: center">
+          <button mat-button (click)="showSubCategories(category.id)">Sub Categories</button>
+        </mat-card-actions>
+        <mat-card-actions>
+          <button mat-button>Edit</button>
+          <button mat-button (click)="delete('productCategory', category.id)">Delete</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+
+
+  <div class="subCategories">
+    <div class="fixed">
+      <p class="navigation"><span class="shift" (click)="show('categories', 'subCategories')">Categories </span>
+        <i class="fas fa-angle-right"></i><span class="current"> Sub Categories</span></p>
+
+      <div class="add-button">
+        <mat-card class="card add" (click)="createSubCategory(lastCategoryId)">
+          <mat-card-title>Add Sub Category</mat-card-title>
+          <mat-card-content>+</mat-card-content>
+        </mat-card>
+      </div>
+
+      <h2>List Of Sub Categories</h2>
+    </div>
+    <div class="existing">
+      <mat-card class="card single" *ngFor="let subCategory of subCategories">
+        <mat-card-content>{{subCategory.title}}</mat-card-content>
+        <img mat-card-image style="height: 150px; width: 150px" src="{{subCategory.image_url}}"
+             alt="{{subCategory.title}}">
+        <mat-card-actions style="text-align: center">
+          <button mat-button (click)="showProducts(subCategory.id)">Products</button>
+        </mat-card-actions>
+        <mat-card-actions>
+          <button mat-button>Edit</button>
+          <button mat-button (click)="delete('productSubCategory', subCategory.id)">Delete</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="products">
+    <div class="fixed">
+      <p class="navigation"><span class="shift" (click)="show('categories', 'products')">Categories </span><span><i
+        class="fas fa-angle-right"></i></span>
+        <span class="shift" (click)="show('subCategories', 'products')"> Sub Categories </span>
+        <i class="fas fa-angle-right"></i><span class="current"> Products</span></p>
+
+      <div class="add-button">
+        <mat-card class="card add" (click)="createProduct(lastSubCategoryId)">
+          <mat-card-title>Add Product</mat-card-title>
+          <mat-card-content>+</mat-card-content>
+        </mat-card>
+      </div>
+      <h2>List Of Products</h2>
+    </div>
+
+    <div class="existing">
+      <mat-card class="card single" *ngFor="let product of products">
+        <mat-card-content>{{product.title}}</mat-card-content>
+        <img mat-card-image style="height: 150px; width: 150px" src="{{product.image_url}}" alt="{{product.title}}">
+        <mat-card-content>
+          Actual Rate: <span>{{product.mrp}}</span>
+        </mat-card-content>
+        <mat-card-content>
+          Discounted Rate: <span>{{product.selling_price}}</span>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>Edit</button>
+          <button mat-button (click)="delete('product', product.id)">Delete</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

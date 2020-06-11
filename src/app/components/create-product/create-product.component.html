@@ -1,0 +1,56 @@
+<div>
+  <mat-card style="width: 50vh; text-align: center; padding: 30px">
+    <form [formGroup]="form" (ngSubmit)="createProduct()">
+      <mat-form-field>
+        <label for="title">
+          <input matInput type="text" class="form-control" id="title" placeholder="Title" formControlName="title">
+        </label>
+      </mat-form-field>
+      <br>
+      <div>
+        <mat-radio-group aria-label="is_under_gst" [(ngModel)]="gstBoolean" [ngModelOptions]="{standalone: true}">
+          <p>Is it a GST Product ?</p>
+          <label>
+            <input type="radio" [value]="true" formControlName="is_under_gst" >
+          </label>True
+          <label>
+            <input type="radio" [value]="false" formControlName="is_under_gst">
+          </label>False
+        </mat-radio-group>
+      </div>
+      <br>
+      <mat-form-field>
+        <label for="gst_rate"></label><input matInput type="text" class="form-control" id="gst_rate"
+                                             placeholder="Gst Rate"
+                                             formControlName="gst_rate">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <label for="base_quantity">
+          <input matInput type="text" class="form-control" id="base_quantity" placeholder="Base Quantity"
+                 formControlName="base_quantity">
+        </label>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <label for="mrp">
+          <input matInput type="text" class="form-control" id="mrp" placeholder="MRP"
+                 formControlName="mrp">
+        </label>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <label for="selling_price">
+          <input matInput type="text" class="form-control" id="selling_price" placeholder="Selling Price"
+                 formControlName="selling_price">
+        </label>
+      </mat-form-field>
+      <br>
+      <!--      <div class="form-group">-->
+      <input style="padding: 10px;" type="file" id="image" (change)="onFileChange($event)"><br>
+      <!--      </div>-->
+      <button mat-raised-button type="submit" [disabled]="form.invalid || loading" class="btn btn-success">Submit <i
+        class="fa fa-spinner fa-spin fa-fw" *ngIf="loading"></i></button>
+    </form>
+  </mat-card>
+</div>

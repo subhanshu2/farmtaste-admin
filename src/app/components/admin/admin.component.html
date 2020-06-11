@@ -1,0 +1,45 @@
+<!--<div id="dashboard">-->
+<app-dashboard></app-dashboard>
+<div id="content" class="content">
+    <h2>
+        <span class="heading" id="unassigned" (click)="underline('unassigned');">Unassigned Orders</span>/
+        <span class="heading" id="assigned" (click)="underline('assigned');">Assigned Orders</span>
+    </h2>
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+            <tr>
+                <th>Order Id</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Amount</th>
+                <th>Products</th>
+                <th>Payment Mode</th>
+                <th>Payment Status</th>
+                <th>Order Type</th>
+                <th>Employee</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr class="table-rows" *ngFor="let order of selectedOrders">
+                <td>{{order.order_id}}</td>
+                <td>{{order.user.name}}</td>
+                <td>{{order.delivery_address}}</td>
+                <td>{{order.amount - order.discount}}</td>
+                <td><span *ngFor="let product of order.products">{{product.title}} ( {{product.no_of_units}} units )<br></span>
+                </td>
+                <td>{{order.payment_mode}}</td>
+                <td>{{order.payment_status}}</td>
+                <td>{{order.order_type}}</td>
+                <td><span *ngIf="order.employee_id; else assignButton">{{order.employee_id}}</span>
+                    <ng-template #assignButton><a id="assign-button" (click)="assign(order.id)">Assign</a></ng-template>
+                </td>
+            </tr>
+            <tbody>
+        </table>
+
+    </div>
+</div>
+<!--</div>-->
+<!---->

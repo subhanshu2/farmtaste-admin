@@ -1,0 +1,46 @@
+<app-dashboard></app-dashboard>
+<div id="content" class="content">
+  <h2>
+    <span class="heading">Employees > </span><a class="add-button" style="padding: 5px" (click)="createEmployee()">Add New Employee</a>
+  </h2>
+  <div class="table-wrapper">
+    <table class="fl-table">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Mobile No</th>
+        <th>Email</th>
+        <th>Aadhaar No</th>
+        <th>Driver Licence</th>
+        <th>CategoryId</th>
+        <th>State</th>
+        <th>City</th>
+        <th>Location</th>
+        <th>Area</th>
+        <th>Pincode</th>
+        <th>Creator</th>
+      </tr>
+      </thead>
+      <tbody>
+
+      <tr class="table-rows" *ngFor="let employee of employees">
+        <td>{{employee.id}}</td>
+        <td>{{employee.name}}</td>
+        <td>{{employee.mobile_no}}</td>
+        <td>{{employee.email}}</td>
+        <td>{{employee.aadhaar_no}}</td>
+        <td>{{employee.driver_license}}</td>
+        <td>{{employee.category_id}}</td>
+        <td>{{employee.state}}</td>
+        <td>{{employee.city}}</td>
+        <td>{{employee.location}}</td>
+        <td>{{employee.area}}</td>
+        <td>{{employee.pincode}}</td>
+        <td>{{employee.createdBy}}</td>
+      </tr>
+      <tbody>
+    </table>
+
+  </div>
+</div>
