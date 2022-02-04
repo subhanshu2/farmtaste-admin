@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: 'http://ec2-3-7-184-113.ap-south-1.compute.amazonaws.com:3000/',
+  baseUrl: 'http://ec2-34-236-227-232.compute-1.amazonaws.com:3000',
 };

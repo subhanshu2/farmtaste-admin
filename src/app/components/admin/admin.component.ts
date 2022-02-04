@@ -5,6 +5,7 @@ import { Data, Order } from '../../models/order';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { DeliveryBoyComponent } from '../delivery-boy/delivery-boy.component';
+import {ChangeOrderStatusComponent} from '../change-order-status/change-order-status.component';
 
 @Component({
   selector   : 'app-admin',
@@ -57,6 +58,20 @@ export class AdminComponent implements OnInit {
       data: {
         orderId
       }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      this.adminService.orders()
+        .subscribe(res => {
+          this.orders           = res;
+          this.unassignedOrders = this.orders.unassignedOrders;
+          this.selectedOrders   = this.unassignedOrders;
+        });
+    });
+  }
+
+  changeOrderStatus(order: Order) {
+    const dialogRef = this.dialog.open(ChangeOrderStatusComponent, {
+      data: order
     });
     dialogRef.afterClosed().subscribe(result => {
       this.adminService.orders()

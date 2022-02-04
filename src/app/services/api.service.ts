@@ -24,10 +24,10 @@ export class ApiService {
     return this.http.get<T>(this.baseUrl + url, {params: data, headers});
   }
 
-  post<T>(url: string, data?: any): Observable<T> {
+  post<T>(url: string, data?: any, excludeHeaders: boolean = false): Observable<T> {
     let headers = new HttpHeaders();
     headers     = headers.set('Authorization', ApiService.getToken());
-    return this.http.post<T>(this.baseUrl + url, data, {headers});
+    return this.http.post<T>(this.baseUrl + url, data, { headers: excludeHeaders ? undefined : headers });
   }
 
   put<T>(url: string, data?: any): Observable<T> {

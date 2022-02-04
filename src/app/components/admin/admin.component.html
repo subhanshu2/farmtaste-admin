@@ -11,11 +11,14 @@
             <tr>
                 <th>Order Id</th>
                 <th>Name</th>
-                <th>Address</th>
+                <th style="width: 100px">Address</th>
                 <th>Amount</th>
                 <th>Products</th>
+                <th>Expected Date</th>
                 <th>Payment Mode</th>
                 <th>Payment Status</th>
+                <th>Order Status</th>
+                <th>Delivery Time</th>
                 <th>Order Type</th>
                 <th>Employee</th>
             </tr>
@@ -29,11 +32,14 @@
                 <td>{{order.amount - order.discount}}</td>
                 <td><span *ngFor="let product of order.products">{{product.title}} ( {{product.no_of_units}} units )<br></span>
                 </td>
+                <td>{{order.expected_date}}</td>
                 <td>{{order.payment_mode}}</td>
                 <td>{{order.payment_status}}</td>
+                <td><a class="assign-button" (click)="changeOrderStatus(order)">{{order.order_status}}</a></td>
+                <td>{{order.delivery_time ? order.delivery_time : '-'}}</td>
                 <td>{{order.order_type}}</td>
                 <td><span *ngIf="order.employee_id; else assignButton">{{order.employee_id}}</span>
-                    <ng-template #assignButton><a id="assign-button" (click)="assign(order.id)">Assign</a></ng-template>
+                    <ng-template #assignButton><a class="assign-button" (click)="assign(order.id)">Assign</a></ng-template>
                 </td>
             </tr>
             <tbody>

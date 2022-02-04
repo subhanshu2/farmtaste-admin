@@ -58,4 +58,9 @@ export class AdminService {
   createEmployee(data: any): Observable<Employee> {
     return this.api.post<any>('/employees', data);
   }
+
+  updateOrder(orderId: number, data: any): Observable<Order> {
+    console.log(data);
+    return this.api.put<any>('/admin/order/' + orderId, data);
+  }
 }

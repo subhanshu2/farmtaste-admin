@@ -49,6 +49,8 @@
 .fl-table td {
     border-right: 1px solid #f8f8f8;
     font-size: 12px;
+    max-width: 150px;
+    overflow-x: scroll;
 }
 
 .fl-table thead th {
@@ -145,7 +147,7 @@
     }
 }
 
-#assign-button {
+.assign-button {
     padding: 7px;
     background-color: indianred;
     color: white;
@@ -153,8 +155,12 @@
     border: 1px solid black;
 }
 
-#assign-button:hover {
+.assign-button:hover {
     background-color: red;
     cursor: pointer;
+}
+
+.scroll {
+  overflow-x: scroll;
 }
 

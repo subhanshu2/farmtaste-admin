@@ -1,0 +1,33 @@
+<div class="list">
+    <form [formGroup]="form">
+      <mat-form-field>
+        <mat-label>Order Status</mat-label>
+        <mat-select formControlName="order_status">
+          <mat-option *ngFor="let status of statuses" value="{{status}}">{{status}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <label for="delivery_time">
+          <input matInput type="text" id="delivery_time" class="form-control" placeholder="Delivery Time (In Min)"
+                 formControlName="delivery_time">
+        </label>
+      </mat-form-field>
+
+      <br>
+      <button mat-raised-button (click)="updateOrder()"> Submit</button>
+      <button mat-raised-button (click)="close()"> Close</button>
+    </form>
+<!--    <div class="mat-card" *ngFor="let employee of employees">-->
+<!--      <mat-radio-button value="{{employee.id}}">{{employee.name}}- {{employee.mobile_no}}</mat-radio-button>-->
+<!--    </div>-->
+<!--    <div class="mat-card" *ngFor="let employee of employees">-->
+<!--      <mat-radio-button value="{{employee.id}}">{{employee.name}}- {{employee.mobile_no}}</mat-radio-button>-->
+<!--    </div>-->
+<!--    <div class="mat-card" *ngFor="let employee of employees">-->
+<!--      <mat-radio-button value="{{employee.id}}">{{employee.name}}- {{employee.mobile_no}}</mat-radio-button>-->
+<!--    </div>-->
+<!--    <div class="mat-card" *ngFor="let employee of employees">-->
+<!--      <mat-radio-button value="{{employee.id}}">{{employee.name}}- {{employee.mobile_no}}</mat-radio-button>-->
+<!--    </div>-->
+</div>

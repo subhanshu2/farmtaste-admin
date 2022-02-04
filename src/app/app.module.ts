@@ -38,6 +38,7 @@ import { CreateSubCategoryComponent } from './components/create-sub-category/cre
 import { CreateProductComponent } from './components/create-product/create-product.component';
 import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
 import { HistoryComponent } from './components/history/history.component';
+import {ChangeOrderStatusComponent} from './components/change-order-status/change-order-status.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { HistoryComponent } from './components/history/history.component';
     CreateProductComponent,
     CreateEmployeeComponent,
     HistoryComponent,
+    ChangeOrderStatusComponent,
   ],
   imports: [
     BrowserModule,

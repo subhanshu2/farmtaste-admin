@@ -19,6 +19,7 @@ export interface Order {
   payment_mode: PaymentModes;
   payment_status: PaymentStatus;
   order_status: OrderStatus;
+  delivery_time: number;
   order_type: OrderType;
   expected_date?: Date;
   due_date?: Date;

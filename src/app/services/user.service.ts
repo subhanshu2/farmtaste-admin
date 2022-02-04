@@ -10,7 +10,7 @@ export class UserService {
   }
 
   login(data: { emailOrPhone: string, password: string }): Observable<any> {
-    return this.api.post('/login-employee', data);
+    return this.api.post('/login-employee', data, true);
   }
 
 
